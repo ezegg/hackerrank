@@ -14,13 +14,13 @@ SELECT
     count(distinct m.manager_code),
     count(distinct e.employee_code)
 FROM
-    Company AS c
-    JOIN Lead_Manager AS lm ON lm.company_code = c.company_code
-    JOIN Senior_Manager AS sm ON sm.lead_manager_code = lm.lead_manager_code
-    JOIN Manager AS m ON m.senior_manager_code = sm.senior_manager_code
-    JOIN Employee AS e ON e.manager_code = m.manager_code
+    Company AS c,
+    Lead_Manager AS lm,
+    Senior_Manager AS sm,
+    Manager AS m,
+    Employee AS e
 WHERE
-	c.company_code = lm.company_code
+    c.company_code = lm.company_code
     AND c.company_code = sm.company_code
     AND c.company_code = m.company_code
     AND c.company_code = e.company_code

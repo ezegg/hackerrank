@@ -1,0 +1,1 @@
+select max(months*salary) as salary, count(*) from employee group by salary order by salary desc limit 1;
